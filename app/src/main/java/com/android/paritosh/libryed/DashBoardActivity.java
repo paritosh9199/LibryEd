@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.paritosh.libryed.BooksActivity;
+import com.android.paritosh.libryed.LoginActivity;
+import com.android.paritosh.libryed.R;
+import com.android.paritosh.libryed.UserInformation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
@@ -71,8 +75,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         if (firebaseAuth.getCurrentUser() == null) {
-            startActivity(new Intent(DashBoardActivity.this, LoginActivity.class));
             finish();
+            startActivity(new Intent(DashBoardActivity.this, LoginActivity.class));
         }
         if (displayName == null) {
             displayName = user.getDisplayName();
@@ -98,9 +102,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
 
                 firebaseAuth.signOut();
-
-                startActivity(new Intent(this, LoginActivity.class));
                 finish();
+                startActivity(new Intent(this, LoginActivity.class));
 
         }
         return true;
@@ -110,9 +113,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         if (view == logout) {
             firebaseAuth.signOut();
-
-            startActivity(new Intent(this, LoginActivity.class));
             finish();
+            startActivity(new Intent(this, LoginActivity.class));
         }
 
 
@@ -137,13 +139,14 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     }
 
     public void history(View view) {
-        //Intent intent = new Intent(DashBoardActivity.this, historyActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(DashBoardActivity.this, HistoryActivity.class);
+        startActivity(intent);
     }
 
     public void search(View view) {
-        //Intent intent = new Intent(DashBoardActivity.this, searchActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(DashBoardActivity.this, SearchActivity.class);
+        startActivity(intent);
     }
+
 
 }
