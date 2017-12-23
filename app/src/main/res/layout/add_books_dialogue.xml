@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the Book name:"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"
+        android:inputType="textAutoComplete"
+        android:textSize="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the author name:"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/authorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="author"
+        android:inputType="textAutoComplete"
+        android:textSize="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the description:"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/descrName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="description"
+        android:inputType="textAutoComplete"
+        android:textSize="14dp" />
+
+
+</LinearLayout>
