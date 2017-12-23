@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "219751998536",
+    "firebase_url": "https://libryed.firebaseio.com",
+    "project_id": "libryed",
+    "storage_bucket": "libryed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219751998536:android:a42e29197f6a7626",
+        "android_client_info": {
+          "package_name": "com.android.paritosh.libryed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219751998536-fp9t1rgo9hmis66j4vrrl1j3ufpothhl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.paritosh.libryed",
+            "certificate_hash": "37dec4af41fc22645b65ddc8969cf17e86a2425b"
+          }
+        },
+        {
+          "client_id": "219751998536-7semeouet7cngt14bi663337cser0ag5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqw8-j70ARS2L5dbhuTGlBCf6ieoqQpPo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219751998536-7semeouet7cngt14bi663337cser0ag5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
