@@ -6,4 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.android.paritosh.libryed.BooksActivity">
 
+
+    <ListView
+        android:cacheColorHint="@color/gray"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:id="@+id/search_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -51,6 +51,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         setContentView(R.layout.activity_dash_board);
 
+
+
         String displayName = user.getDisplayName();
 
         for (UserInfo userInfo : user.getProviderData()) {

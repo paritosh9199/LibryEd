@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">LibryEd</string>
     <string name="sing">Sign Up/Login</string>
+    <string-array name="my_books">
+        <item>c++</item>
+        <item>aptitue</item>
+        <item>base</item>
+        <item>dld</item>
+        <item>mfcs</item>
+        <item>java</item>
+        <item>mechanics</item>
+        <item>m4</item>
+        <item>cp</item>
+        <item>maths</item>
+        <item>physics</item>
+        <item>chemistry</item>
+        <item>it_ws</item>
+    </string-array>
 </resources>

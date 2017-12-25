@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".RegistrationActivity" android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -20,10 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DashBoardActivity" />
-        <activity android:name=".BooksActivity" />
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".DashBoardActivity"  />
+        <activity android:name=".BooksActivity" android:parentActivityName=".DashBoardActivity" />
+        <activity android:name=".SearchActivity" android:parentActivityName=".DashBoardActivity" />
+        <activity android:name=".HistoryActivity" android:parentActivityName=".DashBoardActivity">
+
+        </activity>
     </application>
 
 </manifest>

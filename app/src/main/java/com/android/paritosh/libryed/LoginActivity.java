@@ -1,7 +1,9 @@
 package com.android.paritosh.libryed;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ProgressDialog progress;
 
     private FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Please click BACK to exit LibryEd", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 
@@ -76,6 +79,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 doubleBackToExitPressedOnce=false;
             }
         }, 2000);
+
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.exit)
+                .setTitle("Closing LibryEd")
+                .setMessage("Are you sure you want to exit the app?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
+
     }
 
     private void userLogin() {
