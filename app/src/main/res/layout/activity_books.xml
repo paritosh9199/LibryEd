@@ -14,13 +14,20 @@
         android:background="@drawable/selector"
         android:drawableStart="@android:drawable/ic_input_add"
         android:gravity="center"
-        android:text="Add book" />
+        android:text="Add bookName" />
 
-    <ListView
-        android:id="@+id/BooksListView"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="1.25dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#737373" />
 
-    </ListView>
+    <android.support.v7.app.AlertController.RecycleListView
+        android:id="@+id/BooksList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.app.AlertController.RecycleListView>
 
 </LinearLayout>
