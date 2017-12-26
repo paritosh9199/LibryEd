@@ -14,7 +14,7 @@
         android:background="@drawable/selector"
         android:drawableStart="@android:drawable/ic_input_add"
         android:gravity="center"
-        android:text="Add bookName" />
+        android:text="Add Book" />
 
     <View
         android:layout_width="match_parent"
@@ -23,11 +23,11 @@
         android:layout_marginTop="15dp"
         android:background="#737373" />
 
-    <android.support.v7.app.AlertController.RecycleListView
+    <ListView
         android:id="@+id/BooksList"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </android.support.v7.app.AlertController.RecycleListView>
+    </ListView>
 
 </LinearLayout>

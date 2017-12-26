@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/book_info_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Name:"
+        android:textColor="#212121"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/author_info_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Author Name:"
+        android:textColor="#212121"
+        android:layout_marginTop="0dp"
+        android:textSize="14dp"
+        android:textStyle="normal" />
+
+
+
+    <TextView
+        android:id="@+id/desc_info_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Description:"
+        android:textColor="#212121"
+        android:textSize="17dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/time_info_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Time Left + Submittion:"
+        android:textColor="#212121"
+        android:textSize="17dp"
+        android:textStyle="normal" />
+
+
+
+
+
+</LinearLayout>

@@ -14,6 +14,8 @@ import android.widget.EditText;
  * Created by PARITOSH on 12/23/2017.
  */
 
+// This dialogue is to add the book and its detail to firebase
+
 public class BooksDialogue extends AppCompatDialogFragment  {
 
     private EditText bookName,authorName,desc;
