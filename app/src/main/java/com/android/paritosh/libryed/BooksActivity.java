@@ -140,7 +140,7 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
     }
 
     @Override
-    public void getInfoFromDialogue(String Flag) {
+    public void getInfoFromDialogue(int Flag) {
         //use this method to get the flag to submit the book to history
         /*
         if(flag is yes){
@@ -150,6 +150,8 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
         }
 
          */
+
+
 
     }
 }

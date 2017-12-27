@@ -25,6 +25,9 @@ public class BooksItemDialogue extends AppCompatDialogFragment {
     private String bn,an,dsc;
     private long timeStamp;
     private BooksInfoListener listener;
+    private int flag;
+    private static int YES = 1;
+    private static int NO = 0;
 
     public BooksItemDialogue() {
     }
@@ -77,13 +80,10 @@ public class BooksItemDialogue extends AppCompatDialogFragment {
                 .setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        /*
-                        String bname = bookName.getText().toString();
-                        String aname = authorName.getText().toString();
-                        String descriptionNotes = desc.getText().toString();
 
-                        listener.applyText(bname,aname,descriptionNotes);
-                        */
+                        flag = YES;
+                        listener.getInfoFromDialogue(flag);
+
 
                     }
                 });
@@ -126,7 +126,7 @@ public class BooksItemDialogue extends AppCompatDialogFragment {
 
 
     public interface BooksInfoListener{
-        void getInfoFromDialogue(String Flag);
+        void getInfoFromDialogue(int Flag);
         //implement the fla in the positive button of the dialogue..!
     }
 

@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }, 2000);
 
         new AlertDialog.Builder(this)
-                .setIcon(R.drawable.exit)
+                .setIcon(R.drawable.hitam)
                 .setTitle("Closing LibryEd")
                 .setMessage("Are you sure you want to exit the app?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener()
