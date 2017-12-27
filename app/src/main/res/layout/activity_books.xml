@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.android.paritosh.libryed.BooksActivity">
 
+    <Button
+        android:id="@+id/AddBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/selector"
+        android:drawableStart="@android:drawable/ic_input_add"
+        android:gravity="center"
+        android:text="Add Book" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.25dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#737373" />
 
-</android.support.constraint.ConstraintLayout>
+    <ListView
+        android:id="@+id/BooksList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+</LinearLayout>

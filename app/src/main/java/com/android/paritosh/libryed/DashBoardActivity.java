@@ -33,7 +33,7 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private TextView logout, valueFromUser;
+    private TextView valueFromUser;
     private TextView email;
     private Button saveInfo;
     private EditText name, halltckt;
@@ -63,14 +63,12 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         }
 
 
-        logout = (TextView) findViewById(R.id.signoutUsr);
-        valueFromUser = (TextView) findViewById(R.id.valueUsr);
+
         email = (TextView) findViewById(R.id.UserEmail);
         //name = (EditText) findViewById(R.id.nameUsr);
         //halltckt = (EditText) findViewById(R.id.hallUsr);
         //saveInfo = (Button) findViewById(R.id.saveUsr);
 
-        logout.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -113,11 +111,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
-        if (view == logout) {
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(this, LoginActivity.class));
-        }
+
 
 
     }
