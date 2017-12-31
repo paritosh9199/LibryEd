@@ -3,55 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#545454"
     android:orientation="vertical"
     tools:context="com.android.paritosh.libryed.DashBoardActivity">
 
-    <TextView
-        android:id="@+id/UserEmail"
+    <LinearLayout
+        android:id="@+id/lay1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:gravity="center"
-        android:text="user email"
-        android:textColor="#fff"
-        android:textSize="16dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent">
 
+        <TextView
+            android:id="@+id/UserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textView4"
+            android:gravity="center"
+            android:text="username"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_margin="20dp"
-        android:background="@drawable/button"
-        android:onClick="books"
-        android:text="books"
-        android:textColor="#fff" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@drawable/button"
-        android:onClick="history"
-        android:text="History"
-        android:textColor="#fff" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@drawable/button"
-        android:onClick="search"
-        android:text="Search books"
-        android:textColor="#fff" />
+        android:layout_height="0dp"
+        android:layout_above="@+id/lay1"
+        android:layout_weight="1.5"
+        android:background="#fff"
+        android:orientation="vertical"
+        tools:context="com.android.paritosh.libryed.DashBoardActivity">
 
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="20dp"
+            android:background="@drawable/button"
+            android:onClick="books"
+            android:text="books"
+            android:textColor="#fff" />
 
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/button"
+            android:onClick="search"
+            android:text="Search books"
+            android:textColor="#fff" />
 
-
+    </LinearLayout>
 </LinearLayout>

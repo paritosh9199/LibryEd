@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -42,7 +43,7 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         addBooks = findViewById(R.id.AddBooks);
         booksList = findViewById(R.id.BooksList);
 
@@ -51,7 +52,7 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
         bookAdapter = new BookAdapter(this, booksArrayList);
         booksList.setAdapter(bookAdapter);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mBookInformation = new BooksInformation();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -139,6 +140,12 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
                 Intent intent = new Intent(BooksActivity.this, HistoryActivity.class);
                 startActivity(intent);
 
+        }
+
+        if (id==android.R.id.home) {
+            Intent i = new Intent(BooksActivity.this,DashBoardActivity.class);
+            startActivity(i);
+            finish();
         }
         return true;
     }

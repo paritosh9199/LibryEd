@@ -8,6 +8,7 @@
         android:id="@+id/books_history_display_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
         android:text="Name"
         android:textSize="20dp" />
 
@@ -15,6 +16,7 @@
         android:id="@+id/author_history_display_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_below="@+id/books_history_display_name"
         android:text="author name "
         android:textSize="14dp" />
@@ -24,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:textColor="@color/secondary_text"
         android:layout_below="@+id/author_history_display_name"
         android:text="description "
         android:textSize="16dp" />
@@ -32,6 +35,7 @@
         android:id="@+id/time_history_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="2dp"

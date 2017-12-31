@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DashBoardActivity"  />
+        <activity android:name=".DashBoardActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".BooksActivity" android:parentActivityName=".DashBoardActivity"
             android:label="Books"/>
         <activity android:name=".SearchActivity" android:parentActivityName=".DashBoardActivity"

@@ -44,6 +44,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     private DatabaseReference databaseReference;
     private FirebaseDatabase database;
     private String displayName;
+    private Menu m1;
 
 
     @Override
@@ -59,7 +60,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         for (UserInfo userInfo : user.getProviderData()) {
             if (displayName == null && userInfo.getDisplayName() != null) {
                 displayName = userInfo.getDisplayName();
-                email.setText("welcome " + displayName);
+                email.setText("Hello \n" + displayName);
             }
         }
 
@@ -89,6 +90,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.log_out,menu);
+        m1= menu;
+
         return true;
     }
 
@@ -110,7 +113,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                     finish();
                 System.exit(0);
 
+
         }
+
+
         return true;
     }
 
@@ -148,6 +154,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         Intent intent = new Intent(DashBoardActivity.this, SearchActivity.class);
         startActivity(intent);
     }
+
 
 
 }
