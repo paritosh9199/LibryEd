@@ -14,11 +14,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by PARITOSH on 12/25/2017.
+ * Created by PARITOSH on 12/30/2017.
  */
-
-public class BookAdapter extends ArrayAdapter<BooksInformation> {
-    public BookAdapter(@NonNull Context context, @NonNull List<BooksInformation> objects) {
+public class HistoryAdapter extends ArrayAdapter<BooksInformation>  {
+    public HistoryAdapter(@NonNull Context context, @NonNull List<BooksInformation> objects) {
         super(context, 0, objects);
     }
 
@@ -27,17 +26,16 @@ public class BookAdapter extends ArrayAdapter<BooksInformation> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View newView = convertView;
         if (newView == null) {
-            //LayoutInflater.from(getContext()).inflate(R.layout.books_display_layout,null);
-            newView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.books_display_layout, parent, false);
+            newView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.history_display_layout, parent, false);
         }
 
         BooksInformation item = getItem(position);
 
 
-        TextView bookName = newView.findViewById(R.id.books_display_name);
-        TextView authorName = newView.findViewById(R.id.author_display_name);
-        TextView desc = newView.findViewById(R.id.desc_display);
-        TextView subTime = newView.findViewById(R.id.time_display);
+        TextView bookName = newView.findViewById(R.id.books_history_display_name);
+        TextView authorName = newView.findViewById(R.id.author_history_display_name);
+        TextView desc = newView.findViewById(R.id.desc_history_display);
+        TextView subTime = newView.findViewById(R.id.time_history_display);
 
         bookName.setText(item.getBookName());
         authorName.setText(item.getauthor());
@@ -48,9 +46,10 @@ public class BookAdapter extends ArrayAdapter<BooksInformation> {
         //'('EEE')'
         SimpleDateFormat sdf = new SimpleDateFormat("dd'('EEE')' MMM YY");
         String formattedDate = sdf.format(end);
-        subTime.setText("submit by " + formattedDate);
+        subTime.setText("submited on " + formattedDate);
         return newView;
 
 
     }
+
 }

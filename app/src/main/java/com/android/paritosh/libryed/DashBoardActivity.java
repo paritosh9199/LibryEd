@@ -1,6 +1,7 @@
 package com.android.paritosh.libryed;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,7 +65,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
 
 
-        email = (TextView) findViewById(R.id.UserEmail);
+        email = findViewById(R.id.UserEmail);
         //name = (EditText) findViewById(R.id.nameUsr);
         //halltckt = (EditText) findViewById(R.id.hallUsr);
         //saveInfo = (Button) findViewById(R.id.saveUsr);
@@ -99,11 +100,15 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         switch (id)
         {
             case R.id.logout_menu:
-
-
                 firebaseAuth.signOut();
-                finish();
                 startActivity(new Intent(this, LoginActivity.class));
+                finish();
+            case R.id.exit:
+                if (Build.VERSION.SDK_INT >= 21)
+                    finishAndRemoveTask();
+                else
+                    finish();
+                System.exit(0);
 
         }
         return true;

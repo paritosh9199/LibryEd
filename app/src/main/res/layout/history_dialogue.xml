@@ -9,7 +9,7 @@
     android:padding="20dp">
 
     <TextView
-        android:id="@+id/book_info_name"
+        android:id="@+id/book_info_history_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Book Name:"
@@ -19,7 +19,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/author_info_name"
+        android:id="@+id/author_info_history_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Author Name:"
@@ -31,7 +31,7 @@
 
 
     <TextView
-        android:id="@+id/desc_info_display"
+        android:id="@+id/desc_info_history_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -41,14 +41,13 @@
         android:textStyle="normal" />
 
     <TextView
-        android:id="@+id/time_info_display"
+        android:id="@+id/time_info_history_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Time Left + Submittion:"
+        android:text="Submited on Date+ issued on"
         android:textColor="#212121"
         android:textSize="17dp"
         android:textStyle="normal" />
-
 </LinearLayout>
 </ScrollView>

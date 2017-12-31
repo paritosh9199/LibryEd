@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by PARITOSH on 12/23/2017.
@@ -39,8 +40,13 @@ public class BooksDialogue extends AppCompatDialogFragment  {
                 String bname = bookName.getText().toString();
                 String aname = authorName.getText().toString();
                 String descriptionNotes = desc.getText().toString();
+                boolean condition = bname.equals(null)||aname.equals(null)||descriptionNotes.equals(null);
+                if(bname.isEmpty()||aname.isEmpty()||descriptionNotes.isEmpty()){
+                    Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
+                }else{
+                    listener.applyText(bname,aname,descriptionNotes);
+                }
 
-                listener.applyText(bname,aname,descriptionNotes);
 
             }
         });

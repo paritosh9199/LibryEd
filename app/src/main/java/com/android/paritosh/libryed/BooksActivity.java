@@ -1,13 +1,15 @@
 package com.android.paritosh.libryed;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 
 //import static android.support.v7.RecyclerView;
 
-public class BooksActivity extends AppCompatActivity implements BooksDialogue.BooksListener,BooksItemDialogue.BooksInfoListener {
+public class BooksActivity extends AppCompatActivity implements BooksDialogue.BooksListener, BooksItemDialogue.BooksInfoListener {
 
     private Button addBooks;
     private ListView booksList;
@@ -29,8 +31,11 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mFirebaseUser;
+    private BooksInformation mBookInformation;
+    private int index, indexParent;
 
     private ArrayList<BooksInformation> booksArrayList;
+    private ArrayList<String> parentKey;
     private BookAdapter bookAdapter;
 
     @Override
@@ -42,9 +47,13 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
         booksList = findViewById(R.id.BooksList);
 
         booksArrayList = new ArrayList<>();
+        parentKey = new ArrayList<>();
         bookAdapter = new BookAdapter(this, booksArrayList);
         booksList.setAdapter(bookAdapter);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mBookInformation = new BooksInformation();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         //add the ref here...
         mDatabaseReference = mFirebaseDatabase.getReference("userData");
@@ -54,11 +63,13 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
                 .addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
                         BooksInformation booksInformation = dataSnapshot.getValue(BooksInformation.class);
                         booksArrayList.add(booksInformation);
+                        parentKey.add(dataSnapshot.getKey());
                         bookAdapter.notifyDataSetChanged();
 
-                        Log.i("info", ""+booksInformation.getBookName()+booksInformation.getauthor());
+                        Log.i("info", "" + booksInformation.getBookName() + booksInformation.getauthor());
 
                     }
 
@@ -96,20 +107,40 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
                 BooksInformation booksInformation = booksArrayList.get(i);
                 //the above line is used to get the value from the item of position i
 
-                //long st = System.currentTimeMillis() / 1000L + 1296000;
-                //"Physics","paritosh","boring book by me",st
-                //Toast.makeText(BooksActivity.this, "the position is "+i+" "+booksInformation.getTimeStampStart()+" "+booksInformation.getTimeStampEnd(), Toast.LENGTH_SHORT).show();
-                String bookN,An,dscr;
+                String bookN, An, dscr;
                 long TEnd;
                 bookN = booksInformation.getBookName();
                 An = booksInformation.getauthor();
-                dscr  = booksInformation.getDescription();
+                dscr = booksInformation.getDescription();
                 TEnd = booksInformation.getTimeStampEnd();
-                BooksItemDialogue booksItemDialogue = new BooksItemDialogue(bookN,An,dscr,TEnd);
+                BooksItemDialogue booksItemDialogue = new BooksItemDialogue(bookN, An, dscr, TEnd);
                 booksItemDialogue.show(getSupportFragmentManager(), "books info dialogue");
+                //to set the current object to the class object to pass it in history branch
+                mBookInformation = booksInformation;
+                index = i;
+
 
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.books_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.history:
+                Intent intent = new Intent(BooksActivity.this, HistoryActivity.class);
+                startActivity(intent);
+
+        }
+        return true;
     }
 
     public void openBookAdder() {
@@ -128,30 +159,44 @@ public class BooksActivity extends AppCompatActivity implements BooksDialogue.Bo
         long startTime = System.currentTimeMillis() / 1000L;
         long endtime = startTime + 1296000;
 
-        BooksInformation bi = new BooksInformation(bname, aname, desc,startTime,endtime);
+        BooksInformation bi = new BooksInformation(bname, aname, desc, startTime, endtime);
 
         String uid = mFirebaseUser.getUid();
 
-        //mDatabaseReference.push().setValue(bi);
+        //to add the book to books branch
         mDatabaseReference.child(uid).child("Books").push().setValue(bi);
-        //to add history
-        //mDatabaseReference.child(uid).child("History").push().setValue(bi);
+    }
 
+    public void historyDatabase(BooksInformation databaseObj, int SFlag) {
+        if (SFlag == 1) {
+            // also set a submit flag in database .setSubmitFlag while saving into history branch
+            long CT = System.currentTimeMillis() / 1000L;
+            String pkey = parentKey.get(index);
+            databaseObj.setTimeStampEnd(CT);
+            databaseObj.setSubmitFlag(1);
+            mDatabaseReference.child(mFirebaseUser.getUid()).child("Books").child(pkey).setValue(null);
+            mDatabaseReference.child(mFirebaseUser.getUid()).child("History").push().setValue(databaseObj);
+            booksArrayList.remove(databaseObj);
+            parentKey.remove(index);
+            bookAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override
-    public void getInfoFromDialogue(int Flag) {
+    public void getInfoFromDialogue(int SubmitFlag) {
         //use this method to get the flag to submit the book to history
         /*
-        if(flag is yes){
+        if(SubmitFlag is yes){
                enter the books to firebase layout
                mDatabaseReference.child(uid).child("History").push().setValue(bi);
                and if possible try to delete the entry for books branch in the database
         }
+        */
 
-         */
+        if (SubmitFlag == 1) {
+            historyDatabase(mBookInformation, SubmitFlag);
+        } else {
 
-
-
+        }
     }
 }

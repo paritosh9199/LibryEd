@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">LibryEd</string>
     <string name="sing">Sign Up/Login</string>
+    <string name="add">+</string>
     <string-array name="my_books">
         <item>c++</item>
         <item>aptitue</item>

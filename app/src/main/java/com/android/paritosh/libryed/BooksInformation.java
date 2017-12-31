@@ -10,6 +10,16 @@ public class BooksInformation {
     private String description;
     private long TimeStampStart,TimeStampEnd;
 
+    public int getSubmitFlag() {
+        return SubmitFlag;
+    }
+
+    public void setSubmitFlag(int submitFlag) {
+        this.SubmitFlag = submitFlag;
+    }
+
+    private int SubmitFlag;
+
     public BooksInformation() {
 
     }
