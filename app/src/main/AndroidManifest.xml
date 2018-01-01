@@ -28,7 +28,7 @@
         android:label="Books"/>
         <activity android:name=".SearchActivity" android:parentActivityName=".DashBoardActivity"
             android:label="Books Library"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme1"/>
         <activity android:name=".HistoryActivity" android:parentActivityName=".BooksActivity"
             android:label="History">
 
