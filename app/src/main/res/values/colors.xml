@@ -6,6 +6,10 @@
     <color name="gray">#555555</color>
 
 
+    <color name="WHITE">#fff</color>
+
+    <color name="purp">#5600b1</color>
+    <color name="purpl">#0066ff</color>
 
     <color name="colorPrimaryLight">#B3E5FC</color>
     <color name="accent">#448AFF</color>

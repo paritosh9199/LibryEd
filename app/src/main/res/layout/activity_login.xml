@@ -4,7 +4,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/activity_login"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="#545454"
+android:background="#fff"
 android:paddingBottom="@dimen/activity_vertical_margin"
 android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
@@ -14,17 +14,19 @@ android:orientation="vertical">
 
 <ImageView
     android:layout_width="240dp"
-    android:layout_height="220dp"
+    android:layout_height="180dp"
     android:layout_gravity="center"
-    android:src="@drawable/me"/>
+    android:background="#fff"/>
 <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:inputType="textEmailAddress"
-    android:textColor="#ffff"
+    android:textColor="@color/purp"
     android:hint="Email-Id"
+    android:backgroundTint="@color/purpl"
+    android:textColorHint="@color/colorAccent"
     android:layout_marginBottom="16dp"
-    android:ems="10"
+
     android:id="@+id/emailidLog" />
 
 <EditText
@@ -32,10 +34,11 @@ android:orientation="vertical">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
-    android:ems="10"
+    android:textColor="@color/purp"
+    android:textColorHint="@color/colorAccent"
+    android:backgroundTint="@color/purpl"
     android:hint="Password"
-    android:inputType="textPassword"
-    android:password="true" />
+    android:inputType="textPassword"/>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -51,9 +54,10 @@ android:orientation="vertical">
         android:text="Login"
         android:layout_width="0dp"
         android:layout_weight="1"
+        android:textColor="#fff"
         android:layout_height="wrap_content"
         android:id="@+id/LoginLog"
-        android:background="@drawable/button"/>
+        android:background="@drawable/selector_button"/>
 
     <TextView
         android:layout_width="0dp"
@@ -73,12 +77,12 @@ android:orientation="vertical">
         android:layout_weight="1"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:text="register"
+    <TextView
+        android:text="Don't have an account? Register here"
         android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:onClick="books"
-        android:background="@drawable/button"
+        android:textColor="#000"
         android:layout_height="wrap_content"
         android:id="@+id/RegisLog" />
 

@@ -14,9 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/selector_button"
         android:gravity="center_vertical|center_horizontal"
         android:drawableStart="@drawable/ic_add"
+        android:textColor="#fff"
         android:text="Add Book" />
 
     <View

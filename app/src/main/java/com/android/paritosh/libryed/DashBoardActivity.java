@@ -1,9 +1,11 @@
 package com.android.paritosh.libryed;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +28,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static android.R.attr.data;
 import static android.R.attr.value;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
@@ -38,6 +43,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     private TextView email;
     private Button saveInfo;
     private EditText name, halltckt;
+    private TextView date,day;
 
 
     private FirebaseAuth firebaseAuth;
@@ -53,20 +59,72 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         setContentView(R.layout.activity_dash_board);
 
+        Toolbar toolbar = findViewById(R.id.infobar);
+        setSupportActionBar(toolbar);
+        toolbar.setOnMenuItemClickListener(
+                new Toolbar.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Handle menu item click event
+
+                        int id=item.getItemId();
+
+                        switch (id)
+                        {
+                            case R.id.logout_menu:
+                                firebaseAuth.signOut();
+                                startActivity(new Intent(DashBoardActivity.this, LoginActivity.class));
+                                finish();
+                            case R.id.exit:
+                                if (Build.VERSION.SDK_INT >= 21)
+                                    finishAndRemoveTask();
+                                else
+                                    finish();
+                                System.exit(0);
+
+
+                        }
+                        return true;
+                    }
+                });
+        //().setHomeAsUpIndicator(R.drawable.ic_action_navigation_arrow_back_inverted);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setTitle("Lib");
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/calibril.ttf");
+        email = findViewById(R.id.UserEmail);
+        day = findViewById(R.id.day);
+        date = findViewById(R.id.date);
+
+        email.setTypeface(custom_font);
+        day.setTypeface(custom_font);
+        date.setTypeface(custom_font);
 
 
         String displayName = user.getDisplayName();
-
+        /*
         for (UserInfo userInfo : user.getProviderData()) {
             if (displayName == null && userInfo.getDisplayName() != null) {
                 displayName = userInfo.getDisplayName();
                 email.setText("Hello \n" + displayName);
             }
-        }
+        }*/
+
+        long CurrentTime = System.currentTimeMillis() / 1000L;
+
+
+        Date d = new Date(CurrentTime*1000L);
+        //'('EEE')'
+        SimpleDateFormat sd1 = new SimpleDateFormat("EEEE");
+        SimpleDateFormat sd2 = new SimpleDateFormat("dd MMMM ");
+        String dayF = sd1.format(d);
+        String dateF = sd2.format(d);
+        day.setTypeface(day.getTypeface(), Typeface.BOLD);
+        day.setText(""+dayF);
+        date.setText(" "+dateF);
 
 
 
-        email = findViewById(R.id.UserEmail);
         //name = (EditText) findViewById(R.id.nameUsr);
         //halltckt = (EditText) findViewById(R.id.hallUsr);
         //saveInfo = (Button) findViewById(R.id.saveUsr);
@@ -84,7 +142,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             displayName = user.getDisplayName();
         }
 
-        email.setText("welcome " + displayName);
+        email.setText("Hello \n" + displayName);
     }
 
 
@@ -98,23 +156,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id=item.getItemId();
 
-        switch (id)
-        {
-            case R.id.logout_menu:
-                firebaseAuth.signOut();
-                startActivity(new Intent(this, LoginActivity.class));
-                finish();
-            case R.id.exit:
-                if (Build.VERSION.SDK_INT >= 21)
-                    finishAndRemoveTask();
-                else
-                    finish();
-                System.exit(0);
-
-
-        }
 
 
         return true;

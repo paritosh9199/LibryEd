@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +27,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText password;
     private EditText email;
-    private Button login, regis;
+    private Button login;
+    private TextView regis;
 
     private ProgressDialog progress;
 
@@ -48,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         password = (EditText) findViewById(R.id.passLog);
         email = (EditText) findViewById(R.id.emailidLog);
         login = (Button) findViewById(R.id.LoginLog);
-        regis = (Button) findViewById(R.id.RegisLog);
+        regis =  findViewById(R.id.RegisLog);
 
         progress = new ProgressDialog(this);
 
@@ -137,7 +139,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             userLogin();
         }
         if (view == regis) {
-            finish();
             startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
         }
     }

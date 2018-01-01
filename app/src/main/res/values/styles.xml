@@ -6,6 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/WHITE</item>
+    </style>
+
+    <style name="AppCompatTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="Theme1" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/WHITE</item>
     </style>
 
 

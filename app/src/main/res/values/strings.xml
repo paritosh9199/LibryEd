@@ -3,18 +3,91 @@
     <string name="sing">Sign Up/Login</string>
     <string name="add">+</string>
     <string-array name="my_books">
-        <item>c++</item>
-        <item>aptitue</item>
-        <item>base</item>
-        <item>dld</item>
-        <item>mfcs</item>
+        <item>Intro to C++</item>
+        <item>A Book on C</item>
+        <item>Introduction on C</item>
+        <item>Dld</item>
+        <item>Mfcs</item>
         <item>java</item>
         <item>mechanics</item>
         <item>m4</item>
         <item>cp</item>
-        <item>maths</item>
-        <item>physics</item>
+        <item>Improve your English</item>
+        <item>Applied Physics</item>
         <item>chemistry</item>
         <item>it_ws</item>
+        <item>Introduction on C++</item>
+        <item>Introduction on java</item>
+        <item>Oracle</item>
+        <item>Elementary theory of numbers</item>
+        <item>Let us C</item>
+        <item>Computers and Information Technology</item>
+        <item>Engineering Mathematics</item>
+        <item>Cambridge International of idioms</item>
+        <item>Barrons How to prepare for the TOEFEL</item>
+        <item>Fundamentals of Data Structures</item>
+        <item>English For Proffessional Students</item>
+        <item>Net Works and Systems</item>
+        <item>Engineering Mathematics-1</item>
+        <item>Engineering Mathematics-2</item>
+        <item>Engineering Mathematics-3</item>
+        <item> Engineering Mathematics-4</item>
+        <item>Networks Lines And Fields</item>
+        <item>Data Structures Using C And C++</item>
+        <item>Engineering Drawing and Graphics</item>
+        <item>Oxford Dictionary</item>
+        <item>Republic</item>
+        <item>A Practical English Grammer Exersises-I</item>
+        <item>Electronic Devices and Circuit Theory</item>
+        <item>Network Analysis</item>
+        <item>Toefl Practice Tests</item>
+        <item>Engineering Drawing</item>
+        <item> Data Ware Housing in the real World</item>
+        <item>Introduction to the Intel Family of Microprocessors</item>
+        <item>System Software</item>
+        <item>Power System Analysis</item>
+        <item>Object Oriented analysis and design</item>
+        <item>Unified Modeling language user guide</item>
+        <item>Prolog</item>
+        <item>Introduction to Artificial Intelligence</item>
+        <item>Computer Network and Internets</item>
+        <item>Digital And Analog Communications systems</item>
+        <item>Introduction to Database Systems</item>
+        <item>C How to Program</item>
+        <item>C++ How to Programme</item>
+        <item>Modern Control Systems</item>
+        <item>Essl Guide to  Wireless Communication Application</item>
+        <item>I.P. Telephony</item>
+        <item>Thinking in C++</item>
+        <item>Thinking in Java</item>
+        <item>Electronic Devices</item>
+        <item>UML Distilled</item>
+        <item>Neural Networks</item>
+        <item>Computer system design and architecture</item>
+        <item>Modern systems analysis and design</item>
+        <item>Managing the software process</item>
+        <item>Introduction to expert systems</item>
+        <item>Doftware Rcuse</item>
+        <item>CMM In Practice</item>
+        <item>Art of Computer Programming</item>
+        <item>Applying UML and Patterns</item>
+        <item>C++ Premier</item>
+        <item>Engineering Management</item>
+        <item>Modern Database Management</item>
+        <item>Effective C++</item>
+        <item>More Effective C++</item>
+        <item>Application Specific Integrated Circuits</item>
+        <item>Operating Systems Modern Perspective</item>
+        <item>Discrete Time Signal Processing</item>
+        <item>Distributed Database Systems</item>
+        <item>Java Server Pages</item>
+        <item>Radio Frequency and Microwoven Electronics illustrated</item>
+        <item>Algorhithms in C</item>
+        <item>Programming Languages</item>
+        <item>Advanced Computer Architectures A Design Space Approach</item>
+        <item>Wireless Aplplication Protocol</item>
+        <item>Digital Communications  Fund Applications</item>
+        <item>Software Engineering</item>
+
     </string-array>
 </resources>

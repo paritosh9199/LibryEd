@@ -6,24 +6,58 @@
     android:orientation="vertical"
     tools:context="com.android.paritosh.libryed.DashBoardActivity">
 
-    <LinearLayout
-        android:id="@+id/lay1"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/infobar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/colorAccent">
-
-        <TextView
-            android:id="@+id/UserEmail"
+        android:background="@color/colorPrimary">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/UserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="80dp"
+                android:text="username"
+                android:textColor="#fff"
+                android:textSize="40dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:id="@+id/day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Day"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=","
+                    android:textSize="16sp"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Date"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+        </LinearLayout>
 
-            android:gravity="center"
-            android:text="username"
-            android:textColor="#fff"
-            android:textSize="16dp" />
 
-    </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -34,25 +68,29 @@
         android:orientation="vertical"
         tools:context="com.android.paritosh.libryed.DashBoardActivity">
 
-
-        <TextView
+        <Button
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_margin="20dp"
-            android:background="@drawable/button"
+            android:background="@drawable/selector_button"
             android:onClick="books"
             android:text="books"
             android:textColor="#fff" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#333"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"/>
 
 
-        <TextView
+        <Button
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@drawable/button"
+            android:background="@drawable/selector_button"
             android:onClick="search"
             android:text="Search books"
             android:textColor="#fff" />
