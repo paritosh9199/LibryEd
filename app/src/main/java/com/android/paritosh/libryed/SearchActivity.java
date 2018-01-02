@@ -157,7 +157,9 @@ public class SearchActivity extends AppCompatActivity {
                 if(newText != null && !newText.isEmpty()){
                     List<String> lstFound = new ArrayList<String>();
                     for(String item:lstSource){
-                        if(item.contains(newText))
+                        String s1= item.toLowerCase();
+                        String s2 = newText.toLowerCase();
+                        if(s1.contains(s2))
                             lstFound.add(item);
                     }
 

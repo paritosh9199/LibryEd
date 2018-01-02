@@ -16,47 +16,67 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="#fff">
+        android:background="#fff"
+        android:orientation="vertical">
 
     </ImageView>
 
-    <android.widget.EditText
-        android:id="@+id/name"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:textColor="@color/purp"
-        android:textColorHint="@color/colorAccent"
         android:backgroundTint="@color/purpl"
-        android:hint="Name"
-        android:inputType="textPersonName"
-         />
+        android:textColorHint="@color/purp">
 
-    <android.widget.EditText
-        android:id="@+id/emailid"
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:backgroundTint="@color/purpl"
+            android:hint="Name"
+            android:inputType="textAutoComplete|textCapWords|textPersonName"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:ems="10"
-        android:hint="Email-Id"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/purp"
-        android:textColorHint="@color/colorAccent"
-        android:backgroundTint="@color/purpl" />
+        android:backgroundTint="@color/purpl"
+        android:textColorHint="@color/purp">
 
-    <android.widget.EditText
-        android:id="@+id/pass"
+        <EditText
+            android:id="@+id/emailid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:backgroundTint="@color/purpl"
+            android:ems="10"
+            android:hint="Email-Id"
+            android:inputType="textAutoComplete|textEmailAddress"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:password="true"
-        android:textColor="@color/purp"
-        android:textColorHint="@color/colorAccent"
-        android:backgroundTint="@color/purpl" />
+        android:backgroundTint="@color/purpl"
+        android:textColorHint="@color/purp">
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:password="true"
+            android:backgroundTint="@color/purpl"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"  />
+    </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,9 +93,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#fff"
             android:background="@drawable/selector_button"
-            android:text="Register" />
+            android:text="Register"
+            android:textColor="#fff" />
 
         <TextView
             android:layout_width="0dp"
@@ -83,19 +103,20 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_weight="1.4"
-       android:orientation="vertical"
-       android:gravity="center">
-    <TextView
-        android:id="@+id/logger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.4"
         android:gravity="center"
-        android:text="Have an account? Login"
-        android:textColor="#000" />
-   </LinearLayout>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/logger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Have an account? Login"
+            android:textColor="#000" />
+    </LinearLayout>
 
 </LinearLayout>

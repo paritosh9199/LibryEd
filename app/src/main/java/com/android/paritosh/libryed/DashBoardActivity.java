@@ -142,7 +142,22 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             displayName = user.getDisplayName();
         }
 
-        email.setText("Hello \n" + displayName);
+        String arr[] = displayName.split(" ");
+        try{
+            String firstName = arr[0];
+            email.setText("Hello \n" + firstName);
+            String lastName = arr[1];
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            Log.e("error with display name","null pointer babe!!");
+        }
+
+        //String name;
+        //if(firstName.length()<2)   write code to check the actual name of the person and then display it in the textview
+
+
     }
 
 

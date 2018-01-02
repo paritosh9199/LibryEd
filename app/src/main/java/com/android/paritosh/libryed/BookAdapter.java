@@ -41,7 +41,16 @@ public class BookAdapter extends ArrayAdapter<BooksInformation> {
 
         bookName.setText(item.getBookName());
         authorName.setText(item.getauthor());
-        desc.setText(item.getDescription());
+
+        String completerDesc = item.getDescription();
+        if(completerDesc.length()>=41){
+            String subDesc = completerDesc.substring(0,49);
+            String setDesc = subDesc+"...";
+            desc.setText(setDesc);
+        }else{
+            desc.setText(item.getDescription());
+        }
+
         //change the time stamp
         long d = item.getTimeStampEnd();
         Date end = new Date(d * 1000L);

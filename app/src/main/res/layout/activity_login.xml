@@ -1,95 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/activity_login"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#fff"
-android:paddingBottom="@dimen/activity_vertical_margin"
-android:paddingLeft="@dimen/activity_horizontal_margin"
-android:paddingRight="@dimen/activity_horizontal_margin"
-android:paddingTop="@dimen/activity_vertical_margin"
-tools:context="com.android.paritosh.libryed.LoginActivity"
-android:orientation="vertical">
-
-<ImageView
-    android:layout_width="240dp"
-    android:layout_height="180dp"
-    android:layout_gravity="center"
-    android:background="#fff"/>
-<EditText
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:inputType="textEmailAddress"
-    android:textColor="@color/purp"
-    android:hint="Email-Id"
-    android:backgroundTint="@color/purpl"
-    android:textColorHint="@color/colorAccent"
-    android:layout_marginBottom="16dp"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.android.paritosh.libryed.LoginActivity">
 
-    android:id="@+id/emailidLog" />
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:background="#fff" />
 
-<EditText
-    android:id="@+id/passLog"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:textColor="@color/purp"
-    android:textColorHint="@color/colorAccent"
-    android:backgroundTint="@color/purpl"
-    android:hint="Password"
-    android:inputType="textPassword"/>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:text="Login"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:textColor="#fff"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LoginLog"
-        android:background="@drawable/selector_button"/>
+        android:backgroundTint="@color/purpl"
+        android:textColorHint="@color/purp">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/emailidLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/purpl"
+            android:hint="Email-Id"
+            android:inputType="textEmailAddress|textAutoComplete"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
 
-</LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="30dp"
-    android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:text="Don't have an account? Register here"
-        android:layout_width="0dp"
-        android:layout_weight="4"
-        android:onClick="books"
-        android:textColor="#000"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/RegisLog" />
+        android:backgroundTint="@color/purpl"
+        android:textColorHint="@color/purp">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/passLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/purpl"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/LoginLog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="Login"
+            android:textColor="#fff" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/RegisLog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:onClick="books"
+            android:text="Don't have an account? Register here"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 </LinearLayout>
